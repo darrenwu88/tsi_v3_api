@@ -635,9 +635,9 @@ def main(secrets_PATH) -> None:
         os.remove(output_csv_path)
 
 
-    # Only keep headers for the first device
-    token_json_file = f'({row["dev_email"]})_token.json'
+    # Get and flatten telemetry for each possible device
     for _, row in device_list_df.iterrows():
+        token_json_file = f'({row["dev_email"]})_token.json'
         get_and_flatten_telemetry(token_json_file, row['cloud_device_id'], row['short_name'], start_date, end_date, output_csv_path)
 
     # Now read the combined CSV for further processing
