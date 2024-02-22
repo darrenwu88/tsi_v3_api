@@ -5,7 +5,10 @@ import glob
 delete_DIR_list = [
                        r'device_list_by_developer_user', 
                        r'flat_telemetry_json_RAW', 
-                       r'flat_telemetry_csv_RAW', ] 
+                       r'flat_telemetry_csv_RAW',
+                       r'client_tokens', 
+                       r'telemetry_outputs',
+                       ] 
     
 for dir in delete_DIR_list:
     dir = os.path.join(dir, "*")
